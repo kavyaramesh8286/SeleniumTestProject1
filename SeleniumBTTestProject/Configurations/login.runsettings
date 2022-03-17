@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<RunSettings>
+	<TestRunParameters>
+		<Parameter name="LoginUrl" value="https://submaharana.atlassian.net" />
+		<Parameter name="userName" value="kmol@gmail.com" />
+		<Parameter name="password" value="Password123#" />
+	</TestRunParameters>
+</RunSettings>
