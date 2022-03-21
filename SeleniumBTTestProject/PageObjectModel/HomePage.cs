@@ -28,7 +28,9 @@ namespace SeleniumBTTestProject.PageObjectModel
             {
                 try
                 {
-                    return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementToBeClickable(By.CssSelector("div[class='css-d6vpf6'] button[class='css-13uzbj5'][type='button']")));
+                    return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementToBeClickable(By.XPath("//button[@class='css-13uzbj5']/span[text()='Projects']")));
+                        //(By.CssSelector("div[class='css-d6vpf6'] button[class='css-13uzbj5'][type='button']")));
+
                 }
                 catch
                 {
@@ -46,7 +48,7 @@ namespace SeleniumBTTestProject.PageObjectModel
             {
                 try
                 {
-                    return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementToBeClickable(By.XPath("/html/body/div[15]/div[2]/div/span/div/div/div[2]/span/a/span/span")));
+                    return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementToBeClickable(By.XPath("//a[@class='css-f6nuwn']//span[text()='View all projects']")));
                 }
                 catch
                 {

@@ -48,8 +48,8 @@ namespace SeleniumBTTestProject.PageObjectModel
             {
                 try
                 {
-                    return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementToBeClickable
-                        (By.XPath("/html/body/div[1]/div/div/div/div[2]/div[2]/div/section/div[2]/form/div[3]/button/span")));
+                    return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementToBeClickable(By.CssSelector("button#login-submit")));
+                        
                 }
                 catch
                 {
@@ -86,8 +86,8 @@ namespace SeleniumBTTestProject.PageObjectModel
             {
                 try
                 {
-                    return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementToBeClickable
-                        (By.XPath("/html/body/div[1]/div/div/div/div[2]/div[2]/div/section/div[2]/form/div[3]/button/span/span")));
+                    return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementToBeClickable(By.CssSelector("button#login-submit")));
+                        
                 }
                 catch
                 {
@@ -97,7 +97,7 @@ namespace SeleniumBTTestProject.PageObjectModel
         }
 
         /// <summary>
-        /// Gets the WebElement for Signup/Login
+        /// Gets the Locator for Signup/Login
         /// </summary>
         public string LoginOrSignUp
         {
@@ -107,56 +107,5 @@ namespace SeleniumBTTestProject.PageObjectModel
                 return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementExists(By.XPath("/html/body/div[1]/div/div/div/div[2]/div[2]/div/section/div[1]/h5"))).Text;
             }
         }
-
-        /// <summary>
-        /// Gets the WebElement for SignUp Button.
-        /// </summary>
-        public IWebElement SignUpButton
-        {
-            get
-            {
-                try
-                {
-                    return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementToBeClickable
-                        (By.XPath("/html/body/div[1]/div/div/div/div[2]/div[2]/div/section/div[2]/form/div[6]/button/span/span")));
-                }
-                catch
-                {
-                    return null!;
-                }
-            }
-        }
-
-
-        /// <summary>
-        /// Gets the WebElement for verify email page
-        /// </summary>
-        public string VerifyEmailPage
-        {
-            get
-            {
-
-                return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementExists(By.XPath("/html/body/div[1]/div/div/div/div[2]/div[2]/div/section/div[1]/h5"))).Text;
-            }
-        }
-
-
-
-
-        /*
-         public void Test1()
-         {
-             driver.Navigate().GoToUrl("");
-             driver.FindElement(By.Id("username")).SendKeys("maharana.chinku@gmail.com");
-             driver.FindElement(By.XPath("/html/body/div[1]/div/div/div/div[2]/div[2]/div/section/div[2]/form/div[3]/button/span")).Click();
-             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
-             driver.FindElement(By.Id("password")).SendKeys("Password123#");
-             driver.FindElement(By.XPath("/html/body/div[1]/div/div/div/div[2]/div[2]/div/section/div[2]/form/div[3]/button/span/span")).Click();
-
-             Console.WriteLine("Test is Passed");
-             Assert.Pass();
-
-         }
-        */
     }
 }

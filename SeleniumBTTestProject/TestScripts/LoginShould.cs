@@ -28,26 +28,6 @@ namespace SeleniumBTTestProject.TestScripts
             _driver = driver ?? throw new ArgumentNullException(nameof(driver), "Driver cannot be null");
         }
 
-        //set the URL
-        /*  #region INITIALIZE
-          [SetUp]
-          public void StartBrowser()
-          {
-              ChromeOptions options = new ChromeOptions();
-              options.AddArgument("no-sandbox");
-
-              _driver = new ChromeDriver(ChromeDriverService.CreateDefaultService(), options, TimeSpan.FromMinutes(7));
-              _driver.Manage().Timeouts().PageLoad.Add(System.TimeSpan.FromMinutes(7));
-              _driver.Manage().Window.Maximize();            
-          }
-
-          [TearDown]
-          public void Close_Browser()
-          {
-              _driver.Quit();
-          }
-          #endregion
-        */
         ///<summary>
         ///Test case for loging in
         /// </summary>
@@ -58,7 +38,7 @@ namespace SeleniumBTTestProject.TestScripts
 
                 _driver.Navigate().GoToUrl(ConfigParameters.ApplicationURL);
                 _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
-                LoginPage loginPage = new LoginPage(_driver);
+                LoginPage loginPage = new(_driver);
                 loginPage.UserNameTxtBox.SendKeys(ConfigParameters.UserName);
                 Thread.Sleep(500);
                 loginPage.ContinueButton.Click();
@@ -75,30 +55,8 @@ namespace SeleniumBTTestProject.TestScripts
                 {
                     return false;
                 }
-
-                /*if (logintitle == "Sign up for your account")
-                {
-
-                    loginPage.SignUpButton.Click();
-                    _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(500);
-                    WebDriverWait wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(30));
-                    string emailPage = wait.Until(n => loginPage.VerifyEmailPage);
-                    Console.WriteLine(emailPage + ".  Verification email sent to the Email ID successfully");
-                    _driver.Quit();
-                    return false;
-                }
-                else if (logintitle == "Check your inbox to log in")
-                {
-                    string emailPage1 = loginPage.VerifyEmailPage;
-                    Console.WriteLine(emailPage1 + ".  Verification email sent to the Email ID successfully");
-                    _driver.Quit();
-                    return false;
-                }
-                else
-                {
-                    return false;
-                }*/
             }
+
             catch (Exception)
             {
                 return false;
