@@ -183,5 +183,24 @@ namespace SeleniumBTTestProject.PageObjectModel
                 }
             }
         }
+
+        /// <summary>
+        /// Gets the WebElement for Projects Hyperlink
+        /// </summary>
+        /// 
+        public IWebElement ProjectsHyperlink
+        {
+            get
+            {
+                try
+                {
+                    return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementExists(By.PartialLinkText("Project")));
+                }
+                catch
+                {
+                    return null!;
+                }
+            }
+        }
     }
 }

@@ -107,5 +107,19 @@ namespace SeleniumBTTestProject.PageObjectModel
                 return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementExists(By.XPath("/html/body/div[1]/div/div/div/div[2]/div[2]/div/section/div[1]/h5"))).Text;
             }
         }
+
+        /// <summary>
+        /// Gets the WebElement for home page title
+        /// </summary>
+        public IWebElement HomePageTitle
+        {
+            get
+            
+            {
+                    return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementExists(By.XPath("//h1[@class='css-1s1aqr']")));
+
+            }
+                           
+        }
     }
 }

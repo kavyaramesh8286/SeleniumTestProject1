@@ -40,5 +40,15 @@ namespace SeleniumBTTestProject.Configurations
             }
         }
 
+        /// <summary>
+        /// Gets the file path.
+        /// </summary>
+        public static string FilePath
+        {
+            get
+            {
+                return TestContext.Parameters.Get("FilePath")!;
+            }
+        }
     }
 }

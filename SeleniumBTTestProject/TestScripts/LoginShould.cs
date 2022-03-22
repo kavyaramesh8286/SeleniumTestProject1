@@ -42,14 +42,23 @@ namespace SeleniumBTTestProject.TestScripts
                 loginPage.UserNameTxtBox.SendKeys(ConfigParameters.UserName);
                 Thread.Sleep(500);
                 loginPage.ContinueButton.Click();
-                new WebDriverWait(_driver, TimeSpan.FromSeconds(3)).Until(d => loginPage.LoginOrSignUp);
+                new WebDriverWait(_driver, TimeSpan.FromSeconds(5)).Until(d => loginPage.LoginOrSignUp);
                 string logintitle = loginPage.LoginOrSignUp;
 
                 if (logintitle == "Log in to your account")
                 {
                     loginPage.PasswordTxtBox.SendKeys(ConfigParameters.Password);
                     loginPage.LoginButton.Click();
-                    return true;
+                    Thread.Sleep(3000);
+                    if (loginPage.HomePageTitle.Displayed)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+
                 }
                 else
                 {
