@@ -7,7 +7,7 @@ using ExpectedConditions = SeleniumExtras.WaitHelpers.ExpectedConditions;
 namespace SeleniumBTTestProject.PageObjectModel
 {
     /// <summary>
-    ///  Class to store the webelements for the Issues page.
+    ///  Class to store the webelements for the 'Create an Issue' page.
     /// </summary>
     public class CreateFrame
     {
@@ -26,7 +26,8 @@ namespace SeleniumBTTestProject.PageObjectModel
         {
             get
             {
-                return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementExists(By.XPath("//h4[@class='css-1aseh1t e1rcei0k1']"))).Text;
+                return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementExists
+                    (By.XPath("//h4[@class='css-1aseh1t e1rcei0k1']"))).Text;
 
 
             }
@@ -40,7 +41,8 @@ namespace SeleniumBTTestProject.PageObjectModel
             {
                 try
                 {
-                    return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementToBeClickable(By.Id("issue-create.ui.modal.create-form.project-picker.project-select")));
+                    return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementToBeClickable
+                        (By.Id("issue-create.ui.modal.create-form.project-picker.project-select")));
                 }
                 catch
                 {
@@ -58,7 +60,8 @@ namespace SeleniumBTTestProject.PageObjectModel
             {
                 try
                 {
-                    return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementToBeClickable(By.Id("issue-create.ui.modal.create-form.type-picker.issue-type-select")));
+                    return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementToBeClickable
+                        (By.Id("issue-create.ui.modal.create-form.type-picker.issue-type-select")));
                 }
                 catch
                 {
@@ -68,7 +71,7 @@ namespace SeleniumBTTestProject.PageObjectModel
         }
 
         /// <summary>
-        /// Gets the WebElement for Issue Type Bug.
+        /// Gets the WebElement for Issue Type - Bug.
         /// </summary>
         public IWebElement IssueTypeBug
         {
@@ -76,7 +79,8 @@ namespace SeleniumBTTestProject.PageObjectModel
             {
                 try
                 {
-                    return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementToBeClickable(By.XPath("//div[@class='xkgbo7-1 bjumES']/div[contains(text(),'Bug')]")));
+                    return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementToBeClickable
+                        (By.XPath("//div[@class='xkgbo7-1 bjumES']/div[contains(text(),'Bug')]")));
                 }
                 catch
                 {
@@ -86,7 +90,7 @@ namespace SeleniumBTTestProject.PageObjectModel
         }
 
         /// <summary>
-        /// Gets the WebElement for Issue summary
+        /// Gets the WebElement for Issue summary text field
         /// </summary>
         public IWebElement IssueSummary
         {
@@ -94,7 +98,8 @@ namespace SeleniumBTTestProject.PageObjectModel
             {
                 try
                 {
-                    return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementExists(By.Name("summary")));
+                    return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementExists
+                        (By.Name("summary")));
                 }
                 catch
                 {
@@ -104,7 +109,7 @@ namespace SeleniumBTTestProject.PageObjectModel
         }
 
         /// <summary>
-        /// Gets the WebElement for Issue Description.
+        /// Gets the WebElement for Issue Description rich text editor.
         /// </summary>
         public IWebElement IssueDescription
         {
@@ -112,7 +117,8 @@ namespace SeleniumBTTestProject.PageObjectModel
             {
                 try
                 {
-                    return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementToBeClickable(By.XPath("//div[@id='description-container']//div[@class='ua-chrome ProseMirror pm-table-resizing-plugin']")));
+                    return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementToBeClickable
+                        (By.XPath("//div[@id='description-container']//div[@class='ua-chrome ProseMirror pm-table-resizing-plugin']")));
 
                 }
                 catch
@@ -123,7 +129,7 @@ namespace SeleniumBTTestProject.PageObjectModel
         }
 
         /// <summary>
-        /// Gets the WebElement for Environment
+        /// Gets the WebElement for Environment rich text editor.
         /// </summary>
         public IWebElement EnvironmentDesc
         {
@@ -131,7 +137,8 @@ namespace SeleniumBTTestProject.PageObjectModel
             {
                 try
                 {
-                    return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementToBeClickable(By.XPath("//div[@id='environment-container']//div[@class='ua-chrome ProseMirror pm-table-resizing-plugin']")));
+                    return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementToBeClickable
+                        (By.XPath("//div[@id='environment-container']//div[@class='ua-chrome ProseMirror pm-table-resizing-plugin']")));
                 }
                 catch
                 {
@@ -149,7 +156,8 @@ namespace SeleniumBTTestProject.PageObjectModel
             {
                 try
                 {
-                    return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementToBeClickable(By.XPath("//label[@id='priority-field-label']/following-sibling::div[@class='i3zfbj-0 keeKqx']")));
+                    return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementToBeClickable
+                        (By.XPath("//label[@id='priority-field-label']/following-sibling::div[@class='i3zfbj-0 keeKqx']")));
                 }
                 catch
                 {
@@ -159,7 +167,7 @@ namespace SeleniumBTTestProject.PageObjectModel
         }
 
         /// <summary>
-        /// Gets the WebElement for Priority Value.
+        /// Gets the WebElement for Priority arrow.
         /// </summary>
         public IWebElement PriorityDropdownArrow
         {
@@ -167,7 +175,8 @@ namespace SeleniumBTTestProject.PageObjectModel
             {
                 try
                 {
-                    return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementToBeClickable(By.XPath("//label[@id='priority-field-label']/following-sibling::div[@class='i3zfbj-0 keeKqx']//span[@class='css-pxzk9z']")));
+                    return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementToBeClickable
+                        (By.XPath("//label[@id='priority-field-label']/following-sibling::div[@class='i3zfbj-0 keeKqx']//span[@class='css-pxzk9z']")));
                 }
                 catch
                 {
@@ -185,9 +194,10 @@ namespace SeleniumBTTestProject.PageObjectModel
             {
                 try
                 {
-                    return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementToBeClickable(By.XPath("//div[@class='xkgbo7-1 bjumES']/div[contains(text(),'Highest')]"))); 
+                    return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementToBeClickable
+                        (By.XPath("//div[@class='xkgbo7-1 bjumES']/div[contains(text(),'Highest')]"))); 
                     //(By.Id("react-select-6-option-0.css-12fvnfc-option]")));
-                        //div[@class='xkgbo7-1 bjumES']/div[contains(text(),'Highest')]")));
+                        
                 }
                 catch
                 {
@@ -205,7 +215,8 @@ namespace SeleniumBTTestProject.PageObjectModel
             {
                 try
                 {
-                    return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementToBeClickable(By.XPath("//div[@id='duedate-container']//div[@class=' css-qgzjb9']")));
+                    return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementToBeClickable
+                        (By.XPath("//div[@id='duedate-container']//div[@class=' css-qgzjb9']")));
                 }
                 catch
                 {
@@ -223,7 +234,8 @@ namespace SeleniumBTTestProject.PageObjectModel
             {
                 try
                 {
-                    return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementIsVisible(By.XPath("//div[@id='duedate-container']//button[@class='css-16lbez3'][text()='30']")));
+                    return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementIsVisible
+                        (By.XPath("//div[@id='duedate-container']//button[@class='css-16lbez3'][text()='30']")));
                 }
                 catch
                 {
@@ -241,7 +253,8 @@ namespace SeleniumBTTestProject.PageObjectModel
             {
                 try
                 {
-                    return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementIsVisible(By.ClassName("css-goggrm")));
+                    return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementIsVisible
+                        (By.ClassName("css-goggrm")));
                 }
                 catch
                 {
@@ -259,7 +272,8 @@ namespace SeleniumBTTestProject.PageObjectModel
             {
                 try
                 {
-                    return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementIsVisible(By.XPath("//div[@class=' css-rfofhd']/div")));
+                    return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementIsVisible
+                        (By.XPath("//div[@class=' css-rfofhd']/div")));
                 }
                 catch
                 {

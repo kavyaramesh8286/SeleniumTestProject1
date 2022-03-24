@@ -16,9 +16,7 @@ namespace SeleniumBTTestProject.TestScripts
     public class LoginShould
     {
         private readonly IWebDriver _driver;
-        //public TestContext? TestContext { get; set; }
-
-
+        
 
         /// <summary>
         /// Initialize new instance of "LoginShould class.
@@ -29,7 +27,7 @@ namespace SeleniumBTTestProject.TestScripts
         }
 
         ///<summary>
-        ///Test case for loging in
+        ///Test case for logging in
         /// </summary>
         public bool Login()
         {

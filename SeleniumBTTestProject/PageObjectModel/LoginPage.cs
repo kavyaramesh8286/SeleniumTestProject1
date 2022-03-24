@@ -30,7 +30,8 @@ namespace SeleniumBTTestProject.PageObjectModel
             {
                 try
                 {
-                    return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementToBeClickable(By.Id("username")));
+                    return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementToBeClickable
+                        (By.Id("username")));
                 }
                 catch
                 {
@@ -48,7 +49,8 @@ namespace SeleniumBTTestProject.PageObjectModel
             {
                 try
                 {
-                    return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementToBeClickable(By.CssSelector("button#login-submit")));
+                    return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementToBeClickable
+                        (By.CssSelector("button#login-submit")));
                         
                 }
                 catch
@@ -68,7 +70,8 @@ namespace SeleniumBTTestProject.PageObjectModel
             {
                 try
                 {
-                    return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementToBeClickable(By.Id("password")));
+                    return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementToBeClickable
+                        (By.Id("password")));
                 }
                 catch
                 {
@@ -86,7 +89,8 @@ namespace SeleniumBTTestProject.PageObjectModel
             {
                 try
                 {
-                    return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementToBeClickable(By.CssSelector("button#login-submit")));
+                    return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementToBeClickable
+                        (By.CssSelector("button#login-submit")));
                         
                 }
                 catch
@@ -104,7 +108,8 @@ namespace SeleniumBTTestProject.PageObjectModel
             get
             {
 
-                return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementExists(By.XPath("/html/body/div[1]/div/div/div/div[2]/div[2]/div/section/div[1]/h5"))).Text;
+                return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementExists
+                    (By.XPath("/html/body/div[1]/div/div/div/div[2]/div[2]/div/section/div[1]/h5"))).Text;
             }
         }
 
@@ -116,7 +121,8 @@ namespace SeleniumBTTestProject.PageObjectModel
             get
             
             {
-                    return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementExists(By.XPath("//h1[@class='css-1s1aqr']")));
+                    return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementExists
+                        (By.XPath("//h1[@class='css-1s1aqr']")));
 
             }
                            

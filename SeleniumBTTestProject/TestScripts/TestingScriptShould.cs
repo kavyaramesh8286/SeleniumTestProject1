@@ -23,7 +23,7 @@ namespace SeleniumBTTestProject.TestScripts
         private ExtentReports extent = null!;
         private ExtentTest logger = null!;
         private ExtentHtmlReporter reporter;
-        public ITakesScreenshot screenshotDriver = null!;
+        private ITakesScreenshot screenshotDriver = null!;
 
         public TestingScriptShould()
         {
@@ -83,14 +83,14 @@ namespace SeleniumBTTestProject.TestScripts
                     homePage.ViewAllProjects.Click();
                     Thread.Sleep(500);
                     string title = _driver.Title;
-                    Console.WriteLine("Page Title is :-  " + title);
-                    logger.Info("Page Title is :- " + title, MediaEntityBuilder.CreateScreenCaptureFromBase64String(screenshotDriver.GetScreenshot().AsBase64EncodedString).Build());
+                    Console.WriteLine("Projects Page Title is :-  " + title);
+                    logger.Info("Projects Page Title is :- " + title, MediaEntityBuilder.CreateScreenCaptureFromBase64String(screenshotDriver.GetScreenshot().AsBase64EncodedString).Build());
                     ProjectsPage projectsPage = new(_driver);
                     projectsPage.TAAssessment.Click();
                     Thread.Sleep(3000);
                     string title1 = _driver.Title;
-                    Console.WriteLine("Page Title is :- " + title1);
-                    logger.Info("Page Title is :-  " + title1, MediaEntityBuilder.CreateScreenCaptureFromBase64String(screenshotDriver.GetScreenshot().AsBase64EncodedString).Build());
+                    Console.WriteLine("Issues Page Title is :- " + title1);
+                    logger.Info("Issues Page Title is :-  " + title1, MediaEntityBuilder.CreateScreenCaptureFromBase64String(screenshotDriver.GetScreenshot().AsBase64EncodedString).Build());
                     string projectName = projectsPage.ProjectName;
                     Assert.That(projectName, Is.EqualTo("Project:TAAssessment1"));
                     Console.WriteLine("Project name is validated correctly:- " + projectName);
@@ -106,12 +106,12 @@ namespace SeleniumBTTestProject.TestScripts
                     return;
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 logger.Fail("Test Run Failed. Validate the error", MediaEntityBuilder.CreateScreenCaptureFromBase64String(screenshotDriver.GetScreenshot().AsBase64EncodedString).Build());
                 Close_Browser();
                 extent.Flush();
-                throw;
+                throw new AssertionException("Test Run Failed. Validate the error", ex);
             }
         }
 
@@ -134,7 +134,7 @@ namespace SeleniumBTTestProject.TestScripts
                 logger.Info("Create New Issue window is displayed with page title :-  " + createFrametitle, MediaEntityBuilder.CreateScreenCaptureFromBase64String(screenshotDriver.GetScreenshot().AsBase64EncodedString).Build());
                 Thread.Sleep(500);
                 string projectNameIs = createFrame.ProjectNameDropdownValue.Text;
-                Assert.That(projectNameIs, Is.EqualTo("TAAssessment1"));
+                Assert.That(projectNameIs, Is.EqualTo("TAAssessment1 (RAPI)"));
                 Console.WriteLine("Project dropdown field is pre-selected as:- " + projectNameIs);
                 logger.Info("Project dropdown field is pre-selected as:-  " + projectNameIs, MediaEntityBuilder.CreateScreenCaptureFromBase64String(screenshotDriver.GetScreenshot().AsBase64EncodedString).Build());
 
@@ -190,12 +190,12 @@ namespace SeleniumBTTestProject.TestScripts
                 }
                 Thread.Sleep(5000);
             }
-            catch(Exception)
+            catch(Exception ex)
             {
                 logger.Fail("Test Run Failed. Validate the error", MediaEntityBuilder.CreateScreenCaptureFromBase64String(screenshotDriver.GetScreenshot().AsBase64EncodedString).Build());
                 Close_Browser();
                 extent.Flush();
-                throw;
+                throw new AssertionException("Test Run Failed. Validate the error", ex);
             }
         }
         
@@ -218,12 +218,12 @@ namespace SeleniumBTTestProject.TestScripts
                 logger.Pass("The Searched Bug ID: '" + bugID + "'  is displayed in the grid Successfully.", MediaEntityBuilder.CreateScreenCaptureFromBase64String(screenshotDriver.GetScreenshot().AsBase64EncodedString).Build());
                 Thread.Sleep(5000);
             }
-            catch(Exception)
+            catch(Exception ex)
             {
                 logger.Fail("Test Run Failed. Validate the error", MediaEntityBuilder.CreateScreenCaptureFromBase64String(screenshotDriver.GetScreenshot().AsBase64EncodedString).Build());
                 Close_Browser();
                 extent.Flush();
-                throw;
+                throw new AssertionException("Test Run Failed. Validate the error", ex);
             }
         }
         
@@ -234,7 +234,7 @@ namespace SeleniumBTTestProject.TestScripts
         [Order(4)]
         public void DeleteBug()
         {
-            logger = extent.CreateTest("DeleteBug");
+            logger = extent.CreateTest("Delete Bug");
             try
             {
                 IssuesPage issuesPage = new(_driver);
@@ -259,12 +259,12 @@ namespace SeleniumBTTestProject.TestScripts
                 logger.Pass("Back to 'Projects' Page is displayed", MediaEntityBuilder.CreateScreenCaptureFromBase64String(screenshotDriver.GetScreenshot().AsBase64EncodedString).Build());    
                 
             }
-            catch
+            catch(Exception ex)
             {
                 logger.Fail("Test Run Failed. Validate the error", MediaEntityBuilder.CreateScreenCaptureFromBase64String(screenshotDriver.GetScreenshot().AsBase64EncodedString).Build());
                 Close_Browser();
                 extent.Flush();
-                throw;
+                throw new AssertionException("Test Run Failed. Validate the error", ex);
             }
         }
     }

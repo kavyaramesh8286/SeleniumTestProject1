@@ -28,7 +28,8 @@ namespace SeleniumBTTestProject.PageObjectModel
             {
                 try
                 {
-                    return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementToBeClickable(By.LinkText("TAAssessment1")));
+                    return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementToBeClickable
+                        (By.LinkText("TAAssessment1")));
                         //(By.XPath("//a[@class='g5nvnr-3 hHGSBv']//span[text()='TAAssessment1']")));
                 }
                 catch
@@ -46,7 +47,8 @@ namespace SeleniumBTTestProject.PageObjectModel
             get
             {
 
-                return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementExists(By.XPath("//button[@class='css-1eus1fj']"))).Text;
+                return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementExists
+                    (By.XPath("//button[@class='css-1eus1fj']"))).Text;
             }
         }
     }

@@ -28,7 +28,8 @@ namespace SeleniumBTTestProject.PageObjectModel
             {
                 try
                 {
-                    return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementToBeClickable(By.Id("createGlobalItem")));
+                    return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementToBeClickable
+                        (By.Id("createGlobalItem")));
                 }
                 catch
                 {
@@ -46,7 +47,8 @@ namespace SeleniumBTTestProject.PageObjectModel
             {
                 try
                 {
-                    return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementExists(By.XPath("//table[@class='sc-1h00v3i-0 dHKpG']//tr[1]//td[2]")));
+                    return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementExists
+                        (By.XPath("//table[@class='sc-1h00v3i-0 dHKpG']//tr[1]//td[2]")));
                 }
                 catch
                 {
@@ -64,7 +66,8 @@ namespace SeleniumBTTestProject.PageObjectModel
             {
                 try
                 {
-                    return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementExists(By.XPath("//table[@class='sc-1h00v3i-0 dHKpG']//tr[1]//td[3]")));
+                    return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementExists
+                        (By.XPath("//table[@class='sc-1h00v3i-0 dHKpG']//tr[1]//td[3]")));
                 }
                 catch
                 {
@@ -82,7 +85,8 @@ namespace SeleniumBTTestProject.PageObjectModel
             {
                 try
                 {
-                    return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementToBeClickable(By.Name("search")));
+                    return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementToBeClickable
+                        (By.Name("search")));
                 }
                 catch
                 {
@@ -100,7 +104,8 @@ namespace SeleniumBTTestProject.PageObjectModel
             {
                 try
                 {
-                    return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementToBeClickable(By.XPath("//table[@class='sc-1h00v3i-0 dHKpG']//tr[1]//td[12]")));
+                    return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementToBeClickable
+                        (By.XPath("//table[@class='sc-1h00v3i-0 dHKpG']//tr[1]//td[12]")));
                 }
                 catch
                 {
@@ -118,7 +123,8 @@ namespace SeleniumBTTestProject.PageObjectModel
             {
                 try
                 {
-                    return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementToBeClickable(By.XPath("//div[@class='css-nqsyso']//button[@id='issueaction-delete-issue']")));
+                    return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementToBeClickable
+                        (By.XPath("//div[@class='css-nqsyso']//button[@id='issueaction-delete-issue']")));
                 }
                 catch
                 {
@@ -136,7 +142,8 @@ namespace SeleniumBTTestProject.PageObjectModel
             {
                 try
                 {
-                    return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementToBeClickable(By.Id("delete-issue-submit")));
+                    return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementToBeClickable
+                        (By.Id("delete-issue-submit")));
                 }
                 catch
                 {
@@ -156,7 +163,8 @@ namespace SeleniumBTTestProject.PageObjectModel
             {
                 try
                 {
-                    return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementExists(By.XPath("//div[@class='dzwo7b-0 bEDeIN']//button[@data-test-id='searchfield.ui.searchfield-icon.clear-button']")));
+                    return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementExists
+                        (By.XPath("//div[@class='dzwo7b-0 bEDeIN']//button[@data-test-id='searchfield.ui.searchfield-icon.clear-button']")));
                 }
                 catch
                 {
@@ -175,7 +183,8 @@ namespace SeleniumBTTestProject.PageObjectModel
             {
                 try
                 {
-                    return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementExists(By.TagName("p")));
+                    return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementExists
+                        (By.TagName("p")));
                 }
                 catch
                 {
@@ -194,7 +203,8 @@ namespace SeleniumBTTestProject.PageObjectModel
             {
                 try
                 {
-                    return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementExists(By.PartialLinkText("Project")));
+                    return new WebDriverWait(_driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementExists
+                        (By.PartialLinkText("Project")));
                 }
                 catch
                 {
